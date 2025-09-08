@@ -1,0 +1,23 @@
+GNU GENERAL PUBLIC LICENSE  
+Version 3, 29 June 2007  
+
+Copyright (C) 2025 M. Diki Fahriza
+
+Program ini adalah perangkat lunak bebas: Anda dapat mendistribusikan ulang dan/atau memodifikasinya  
+di bawah ketentuan Lisensi Publik Umum GNU sebagaimana diterbitkan oleh  
+Free Software Foundation, baik versi 3 dari Lisensi ini, atau  
+(bila Anda memilih) versi yang lebih baru.  
+
+Program ini didistribusikan dengan harapan akan berguna,  
+tetapi TANPA JAMINAN APAPUN; bahkan tanpa jaminan tersirat atas  
+KELAYAKAN UNTUK DIPERDAGANGKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.  
+Lihat Lisensi Publik Umum GNU untuk detail lebih lanjut.  
+
+Anda seharusnya telah menerima salinan Lisensi Publik Umum GNU  
+bersama dengan program ini. Jika tidak, lihat <https://www.gnu.org/licenses/>.  
+
+------------------------------------------------------------
+Persyaratan tambahan oleh penulis:  
+- Nama pencipta asli (M. Diki Fahriza) wajib dicantumkan dalam karya turunan.  
+- Perangkat lunak ini harus tetap gratis untuk semua orang.  
+------------------------------------------------------------
