@@ -92,7 +92,9 @@ while ($row = $expense_by_cat_query->fetch_assoc()) {
                 datasets: [{
                     label: 'Total Pengeluaran (Rp)',
                     data: expenseData.map(item => item.total),
-                    backgroundColor: '#667eea'
+                    backgroundColor: 'rgba(54, 133, 235, 0.54)',
+                    barThickness: 15,
+                    maxBarThickness: 20,
                 }]
             },
             options: { responsive: true, scales: { y: { beginAtZero: true } } }
