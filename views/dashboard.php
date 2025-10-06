@@ -253,36 +253,25 @@ if ($peran_pengguna == 'admin') {
     document.addEventListener('DOMContentLoaded', function () {
         // Animasi Counter
         const counters = document.querySelectorAll('.counter');
-        const speed = 200; // Semakin besar, semakin lambat
 
         const animateCounter = (counter) => {
             const target = +counter.innerText.replace(/\./g, '');
             counter.innerText = '0';
             
-            const updateCount = () => {
+            const updateCount = setInterval(() => {
                 const current = +counter.innerText;
-                const increment = target / speed;
 
-                if (current < target) {
-                    counter.innerText = Math.ceil(current + increment);
-                    setTimeout(updateCount, 1);
-                } else {
+                if (current >= target) {
                     counter.innerText = target.toLocaleString('id-ID');
+                    clearInterval(updateCount);
+                    return;
                 }
-            };
-            updateCount();
+                    
+                counter.innerText = Math.ceil(current + (target - current)/3);
+            },10)
         };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
         
-        counters.forEach(counter => observer.observe(counter));
+        counters.forEach( i => animateCounter(i));
 
         // Grafik untuk Admin
         <?php if ($peran_pengguna == 'admin' && !empty($data['ras_chart'])): ?>
@@ -309,7 +298,7 @@ if ($peran_pengguna == 'admin') {
                 }]
             },
             options: {
-                responsive: true,
+                responsive: false,
                 plugins: {
                     legend: {
                         position: 'top',
