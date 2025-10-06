@@ -1,11 +1,32 @@
 <?php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'ternak';
+class Database {
+    private static $instance = null;
+    private $connection;
 
-$koneksi = mysqli_connect($host, $username, $password, $database);
+    private $host = 'localhost';
+    private $username = 'root';
+    private $password = '';
+    private $database = 'ternak';
 
-if (!$koneksi) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
+    private function __construct() {
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
+
+        if ($this->connection->connect_error) {
+            die("Koneksi database gagal: " . $this->connection->connect_error);
+        }
+    }
+
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection() {
+        return $this->connection;
+    }
 }
+
+// Inisialisasi global agar kompatibel dengan kode lama
+$koneksi = Database::getInstance()->getConnection();
